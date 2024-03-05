@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -14,5 +14,57 @@
   </head>
   <body>
     <div class="container-fluid text-center"></div>
+  </body>
+</html>   -->
+
+<!--gpt code-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excuse Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="excuse-container">
+      <h1>Excuse Generator</h1>
+      <p class="excuse" id="excuse"></p>
+      <button id="generate-excuse">Generate Excuse</button>
+    </div>
+    <script>
+      // JavaScript code here
+      const pronouns = ["I", "You", "He", "She", "We", "They"];
+      const subjects = ["dog", "cat", "bird", "elephant", "monkey"];
+      const actions = ["ate", "destroyed", "hid", "stole", "lost"];
+      const possessions = [
+        "my homework",
+        "my keys",
+        "the remote",
+        "the cookies",
+        "the book"
+      ];
+      const locations = [
+        "at home",
+        "at school",
+        "in the park",
+        "at the store",
+        "in my room"
+      ];
+
+      function generateExcuse() {
+        const randomIndex = arr => Math.floor(Math.random() * arr.length);
+        const excuse = `${pronouns[randomIndex(pronouns)]} ${
+          actions[randomIndex(actions)]
+        } ${possessions[randomIndex(possessions)]} because ${
+          subjects[randomIndex(subjects)]
+        } ${locations[randomIndex(locations)]}.`;
+        document.getElementById("excuse").textContent = excuse;
+      }
+
+      document
+        .getElementById("generate-excuse")
+        .addEventListener("click", generateExcuse);
+    </script>
   </body>
 </html>
